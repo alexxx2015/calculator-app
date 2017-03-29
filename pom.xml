@@ -17,6 +17,10 @@
 		<project.encoding>UTF-8</project.encoding>
 		<jetty.port>9090</jetty.port>
 		<java.version>1.8</java.version>
+
+		<appengine.app.version>1</appengine.app.version>
+		<appengine.target.version>1.9.50</appengine.target.version>
+		<appengine-maven-plugin-version>1.0.0</appengine-maven-plugin-version>
 	</properties>
 
 	<dependencies>
@@ -37,6 +41,18 @@
 			<version>2.1.4.RELEASE</version>
 		</dependency>
 
+
+		<!-- Compile/runtime dependencies -->
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-1.0-sdk</artifactId>
+			<version>${appengine.target.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> 
 			<version>4.3.1.RELEASE</version> </dependency> <dependency> <groupId>org.springframework</groupId> 
 			<artifactId>spring-aop</artifactId> <version>4.3.1.RELEASE</version> </dependency> 
@@ -83,6 +99,23 @@
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<version>1.1</version>
 			</plugin>
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<archiveClasses>true</archiveClasses>
+					<webResources>
+						< ! - - in order to interpolate version from pom into appengine-web.xml - - >
+						<resource>
+							<directory>${basedir}/src/main/webapp/WEB-INF</directory>
+							<filtering>true</filtering>
+							<targetPath>WEB-INF</targetPath>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			-->
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
@@ -98,7 +131,7 @@
 							<generatePackage>edu.tum.cal.client.wsdl</generatePackage>
 							<generateDirectory>${project.basedir}/src/main/java/</generateDirectory>
 							<schemas>
-								<schema>
+								<!-- <schema>
 									<url>http://localhost:8080/add/add.wsdl</url>
 								</schema>
 								<schema>
@@ -110,11 +143,28 @@
 								<schema>
 									<url>http://localhost:8383/div/div.wsdl</url>
 								</schema>
+								-->
+								<schema>
+									<url>https://calc-add.appspot.com/add/add.wsdl</url>
+								</schema>
+								<schema>
+									<url>https://calc-sub.appspot.com/sub/sub.wsdl</url>
+								</schema>
+								<schema>
+									<url>https://calc-mul.appspot.com/mul/mul.wsdl</url>
+								</schema>
+								<schema>
+									<url>https://calc-div.appspot.com/div/div.wsdl</url>
+								</schema>
 							</schemas>
 						</configuration>
 					</execution>
 				</executions>
-
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>${appengine-maven-plugin-version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>

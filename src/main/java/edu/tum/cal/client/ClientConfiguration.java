@@ -7,10 +7,16 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 @Configuration
 public class ClientConfiguration {
 
-	public static String AddServiceUrl = "http://localhost:8080/add/";
-	public static String SubServiceUrl = "http://localhost:8181/sub/";
-	public static String MulServiceUrl = "http://localhost:8282/mul/";
-	public static String DivServiceUrl = "http://localhost:8383/div/";
+//	public static String AddServiceUrl = "http://localhost:8080/add/";
+//	public static String SubServiceUrl = "http://localhost:8181/sub/";
+//	public static String MulServiceUrl = "http://localhost:8282/mul/";
+//	public static String DivServiceUrl = "http://localhost:8383/div/";
+
+	public static String AddServiceUrl = "https://calc-add.appspot.com/add/";
+	public static String SubServiceUrl = "https://calc-sub.appspot.com/sub/";
+	public static String MulServiceUrl = "https://calc-mul.appspot.com/mul/";
+	public static String DivServiceUrl = "https://calc-div.appspot.com/div/";
+	
 	public static String ContextPath = "edu.tum.cal.client.wsdl";
 
 	@Bean
