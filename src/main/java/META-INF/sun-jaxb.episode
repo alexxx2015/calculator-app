@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.11 generiert 
+Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
+Generiert: 2017.03.29 um 10:44:27 AM CEST 
+
+  -->
+  <bindings xmlns:tns="http://add.cal.tum.edu" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="edu.tum.cal.client.wsdl"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:AddNumbersRequest">
+      <class ref="edu.tum.cal.client.wsdl.AddNumbersRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:AddNumbersResponse">
+      <class ref="edu.tum.cal.client.wsdl.AddNumbersResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://sub.cal.tum.edu" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="edu.tum.cal.client.wsdl"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:SubNumbersRequest">
+      <class ref="edu.tum.cal.client.wsdl.SubNumbersRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:SubNumbersResponse">
+      <class ref="edu.tum.cal.client.wsdl.SubNumbersResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://mul.cal.tum.edu" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="edu.tum.cal.client.wsdl"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:MulNumbersRequest">
+      <class ref="edu.tum.cal.client.wsdl.MulNumbersRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:MulNumbersResponse">
+      <class ref="edu.tum.cal.client.wsdl.MulNumbersResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://div.cal.tum.edu" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="edu.tum.cal.client.wsdl"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:DivNumbersRequest">
+      <class ref="edu.tum.cal.client.wsdl.DivNumbersRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:DivNumbersResponse">
+      <class ref="edu.tum.cal.client.wsdl.DivNumbersResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
